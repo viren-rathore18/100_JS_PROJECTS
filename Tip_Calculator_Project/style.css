@@ -1,0 +1,157 @@
+/* CSS Variables for theming */
+:root {
+    --primary-color: #007bff; /* A modern blue */
+    --primary-hover-color: #0056b3;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa; /* Lighter background */
+    --card-background-color: #ffffff;
+    --text-color: #343a40;
+    --input-border-color: #ced4da;
+    --input-focus-border-color: #80bdff;
+    --border-radius: 8px; /* Softer corners */
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: var(--card-background-color);
+    max-width: 450px; /* Slightly narrower for a sleeker look */
+    width: 100%;
+    margin: auto;
+    padding: 30px; /* Increased padding */
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    text-align: center; /* Center align header and form elements */
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+header p {
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    font-size: 0.95em;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left; /* Align labels and inputs to the left */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.input-group input[type="number"] {
+    width: 100%;
+    padding: 12px 15px; /* Increased padding for inputs */
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--border-radius);
+    font-family: var(--font-family);
+    font-size: 1em;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input[type="number"]:focus {
+    outline: none;
+    border-color: var(--input-focus-border-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Hide number input spinners for a cleaner look */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 20px; /* Balanced padding */
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-transform: capitalize; /* Softer than uppercase */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 10px; /* Space above the button */
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+.result-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--input-border-color); /* Separator */
+}
+
+.result-section h2 {
+    color: var(--secondary-color);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+#totalAmountDisplay {
+    font-size: 2em; /* Larger display for total */
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+#totalGstAmountDisplay {
+    font-size: 2em; /* Larger display for total */
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    #totalAmountDisplay {
+        font-size: 1.8em;
+    }
+}
