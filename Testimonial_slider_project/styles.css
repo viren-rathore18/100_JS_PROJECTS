@@ -1,0 +1,53 @@
+:root {
+  --primary-color: slateblue;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --container-min-width: 400px;
+  --container-padding: 70px 20px;
+  --image-size: 100px;
+  --image-offset: -50px;
+  --username-font-size: 13px;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: cursive;
+}
+
+.testimonial-container {
+  min-width: var(--container-min-width);
+  max-width: 500px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: var(--container-padding);
+  margin: 5px;
+  color: white;
+  position: relative;
+  text-align: center;
+}
+
+.testimonial-image {
+  width: var(--image-size);
+  height: var(--image-size);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: var(--image-offset);
+  object-fit: cover;
+}
+
+.testimonial-text {
+  margin: 0 0 15px;
+  line-height: 1.5;
+}
+
+.testimonial-username {
+  font-size: var(--username-font-size);
+  font-weight: 100;
+  margin: 0;
+}
